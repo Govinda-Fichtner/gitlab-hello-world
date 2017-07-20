@@ -1,0 +1,14 @@
+image: python:2.7
+
+before_script:
+  - pip install -r requirements.txt
+
+stages:
+  - unit-tests
+
+unit:
+  tags:
+    - docker
+  stage: unit-tests
+  script:
+    - python -m pytest tests/unit
